@@ -6,7 +6,7 @@ const galleryItems = [
       "https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg",
     description: "Hokkaido Flower",
   },
-  
+
   {
     preview:
       "https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg",
@@ -84,7 +84,6 @@ function openModal(index) {
   currentIdx = index;
 }
 
-// Create the gallery list dynamically
 galleryItems.forEach((elem, index) => {
   const listItem = document.createElement("li");
   listItem.classList.add("gallery__item");
