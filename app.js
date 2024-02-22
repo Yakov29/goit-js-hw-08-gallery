@@ -101,7 +101,6 @@ galleryItems.forEach((elem, index) => {
   listItem.appendChild(linkItem);
   galleryListRef.appendChild(listItem);
 
-  // Add click event listener to each image
   imgItem.addEventListener("click", () => openModal(index));
 });
 
