@@ -6,7 +6,6 @@ const galleryItems = [
       "https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg",
     description: "Hokkaido Flower",
   },
-
   {
     preview:
       "https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg",
@@ -100,8 +99,18 @@ galleryItems.forEach((elem, index) => {
   linkItem.appendChild(imgItem);
   listItem.appendChild(linkItem);
   galleryListRef.appendChild(listItem);
+});
 
-  imgItem.addEventListener("click", () => openModal(index));
+galleryListRef.addEventListener("click", (event) => {
+  event.preventDefault();
+  
+  const target = event.target;
+  
+  if (target.nodeName !== "IMG") return;
+  
+  const index = galleryItems.findIndex(item => item.original === target.dataset.source);
+  
+  openModal(index);
 });
 
 closeButtonRef.addEventListener("click", closeModal);
